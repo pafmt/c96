@@ -1,0 +1,27 @@
+{
+	"authors": [ "SHOO" ],
+	"copyright": "Copyright © 2019, SHOO",
+	"description": "A minimal D application.",
+	"license": "public domain",
+	"name": "rl78_test",
+	"targetName": "app.ll",
+	"buildTypes": {
+		"debug": {
+			"buildOptions": ["debugMode", "noBoundsCheck", "betterC"],
+			"dflags-ldc": ["--output-ll", "-conf="]
+		},
+		"release": {
+			"buildOptions": ["releaseMode", "inline", "optimize", "noBoundsCheck", "betterC"],
+			"dflags-ldc": ["--output-ll", "-conf="]
+		}
+	},
+	"postBuildCommands-windows": [
+		"llvm-cbe app.ll.exe -o d_llvm_cbe/app.cbe.c"
+	],
+	"postBuildCommands-linux": [
+		"llvm-cbe app.ll -o d_llvm_cbe/app.cbe.c"
+	],
+	"postBuildCommands-osx": [
+		"llvm-cbe app.ll -o d_llvm_cbe/app.cbe.c"
+	]
+}

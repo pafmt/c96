@@ -1,0 +1,26 @@
+.*
+*.json
+__dummy.html
+docs/
+/rl78_test
+rl78_test-test-*
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.exe
+*.o
+*.obj
+*.lst
+
+# LLVM
+*.ll
+*.bc
+*.cbe.c
+
+# CS+
+/SmartManual Docs
+/DefaultBuild
+*.mtud
+*.rcpe
